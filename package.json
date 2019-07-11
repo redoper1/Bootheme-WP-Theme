@@ -1,0 +1,37 @@
+{
+  "name": "bootheme",
+  "version": "1.0.0",
+  "description": "WordPress theme Bootheme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redoper1/Bootheme-WP-Theme.git"
+  },
+  "keywords": [
+    "wordpress",
+    "boostrap",
+    "theme"
+  ],
+  "author": "David Rychlý <david@davidrychly.cz>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/redoper1/Bootheme-WP-Theme/issues"
+  },
+  "homepage": "https://github.com/redoper1/Bootheme-WP-Theme#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat-multi": "^1.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^1.0.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
