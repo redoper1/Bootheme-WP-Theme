@@ -29,7 +29,7 @@ gulp.task('minifycss', function () {
 gulp.task('scripts', function () {
     return concat({
         'scripts-head.js': ['./js/head/**/*.js', './js/head/*.js'],
-        'scripts.js': ['./node_modules/bootstrap/dist/js/bootstrap.bundle.js', './js/footer/**/*.js'],
+        'scripts.js': ['./node_modules/bootstrap/dist/js/bootstrap.bundle.js', './node_modules/@fortawesome/fontawesome-free/js/all.min.js', './js/footer/**/*.js'],
     })
         .pipe(gulp.dest('./js'));
 });
@@ -47,7 +47,7 @@ gulp.task('minifyjs', function () {
 
 gulp.task('watch', function () {
     gulp.watch(['./scss/**/*.scss', './scss/*.scss'], gulp.parallel('styles'));
-    gulp.watch('./js/*.js', gulp.parallel('scripts'));
+    gulp.watch('./js/**/*.js', gulp.parallel('scripts'));
 });
 
 
@@ -57,3 +57,8 @@ gulp.task('build', gulp.series(
     gulp.parallel('styles', 'scripts'),
     gulp.parallel('minifycss', 'minifyjs'))
 );
+
+gulp.task('watch-build', function () {
+    gulp.watch(['./scss/**/*.scss', './scss/*.scss'], gulp.parallel('styles', 'minifycss'));
+    gulp.watch('./js/**/*.js', gulp.parallel('scripts', 'minifyjs'));
+});

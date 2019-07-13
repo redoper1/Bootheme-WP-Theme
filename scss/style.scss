@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/*!
 Theme Name: Bootheme
 Theme URI: https://github.com/redoper1/Bootheme-WP-Theme
 Author: David Rychlý
@@ -20,3 +20,5 @@ Bootstrap 4 is distributed under the terms of the MIT license.
 */
 // Common
 @import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import 'common/basic';

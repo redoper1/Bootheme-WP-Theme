@@ -1,0 +1,26 @@
+//Hide elements meant to be visible only to screen readers
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+#master-header {
+    transition: margin-top .1s ease 0s;
+
+    .navbar .site-logo img {
+        max-height: 2em;
+        width: auto;
+    }
+}
+
+#content {
+    transition: margin-top, min-height .1s ease 0s;
+}
