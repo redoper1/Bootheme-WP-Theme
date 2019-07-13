@@ -1,5 +1,5 @@
 <?php
-if ( !function_exists( 'bootheme_setup' ) ) :
+if ( !function_exists( 'bootheme_setup' ) ) {
     function bootheme_setup() {
         load_theme_textdomain( 'bootheme', get_template_directory() . '/languages' );
 
@@ -102,7 +102,7 @@ if ( !function_exists( 'bootheme_setup' ) ) :
         // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
     }
-endif;
+}
 add_action( 'after_setup_theme', 'bootheme_setup' );
 
 /**
