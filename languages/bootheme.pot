@@ -1,0 +1,124 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bootheme\n"
+"POT-Creation-Date: 2019-07-14 20:42+0200\n"
+"PO-Revision-Date: 2019-07-14 19:35+0200\n"
+"Last-Translator: \n"
+"Language-Team: David Rychlý <david@davidrychly.cz>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: *.js\n"
+
+#: footer.php:13
+msgid "Proudly powered by"
+msgstr ""
+
+#: footer.php:13
+msgid "and"
+msgstr ""
+
+#: footer.php:13
+msgid "theme"
+msgstr ""
+
+#: footer.php:22 functions.php:28
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:27
+msgid "Navigation Menu"
+msgstr ""
+
+#: functions.php:90
+msgid "Side"
+msgstr ""
+
+#: functions.php:92
+msgid "Add widgets here to appear in your sidebar."
+msgstr ""
+
+#: functions.php:102
+msgid "Footer"
+msgstr ""
+
+#: functions.php:104
+msgid "Add widgets here to appear in your footer."
+msgstr ""
+
+#: functions.php:139
+msgid "It appears the class-wp-bootstrap-navwalker.php file may be missing."
+msgstr ""
+
+#: functions.php:149
+msgid "Search for:"
+msgstr ""
+
+#: functions.php:150 functions.php:151
+msgid "Search"
+msgstr ""
+
+#: functions.php:166
+msgid "Display Site Title"
+msgstr ""
+
+#: header.php:13
+msgid "Skip to content"
+msgstr ""
+
+#: index.php:36
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: index.php:44
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: index.php:57
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: index.php:64
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Bootheme"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/redoper1/Bootheme-WP-Theme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Simple theme based on Bootstrap."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "David Rychlý"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://davidrychly.cz/"
+msgstr ""

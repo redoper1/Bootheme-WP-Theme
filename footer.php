@@ -10,7 +10,7 @@
 								<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 							<?php } ?>
 							<?php
-							printf( __( 'Proudly powered by <a href="https://wordpress.org/">%s</a> and <a href="' . wp_get_theme()->get( 'ThemeURI' ) . '">%s theme</a>', 'bootheme' ), 'WordPress', 'Bootheme' );
+							echo __( 'Proudly powered by', 'bootheme' ) . ' ' . '<a href="https://wordpress.org/">WordPress</a>' . ' ' . __( 'and', 'bootheme' ) . ' ' . '<a href="' . wp_get_theme()->get( 'ThemeURI' ) . '">Bootheme</a>' . ' ' . __( 'theme', 'bootheme' );
 							?>
 							<?php
 							if ( function_exists( 'the_privacy_policy_link' ) ) {

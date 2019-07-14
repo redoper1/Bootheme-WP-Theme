@@ -15,7 +15,7 @@ get_header();
                                 echo '<h1 class="page-title">' . get_the_title( get_option('page_for_posts', true) ) . '</h1>';
                             } ?>
                     </header>
-                    
+
                     <?php
                     // Load posts loop.
                     while ( have_posts() ) {

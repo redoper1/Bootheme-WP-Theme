@@ -70,7 +70,7 @@ if ( !function_exists( 'bootheme_setup' ) ) {
 
         // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
-        
+
         add_theme_support( 'header-text' );
 
         add_theme_support( 'custom-header' );
@@ -156,6 +156,32 @@ if ( !function_exists( 'bootstrap_search_form' ) ) {
 
 if ( !function_exists( 'bootheme_customize_register' ) ) {
 	function bootheme_customize_register( $wp_customize ) {
+		$wp_customize->remove_section( 'header_image' );
+
+		$wp_customize->remove_control( 'display_header_text' );
+		$wp_customize->add_control(
+			'display_header_text',
+			array(
+				'settings' => 'header_textcolor',
+				'label'    => __( 'Display Site Title', 'bootheme' ),
+				'section'  => 'title_tagline',
+				'type'     => 'checkbox',
+				'priority' => 40,
+			)
+		);
 	}
 }
 add_action( 'customize_register', 'bootheme_customize_register' );
+
+if ( !function_exists( 'bootheme_menu_page_removing' ) ) {
+	function bootheme_menu_page_removing() {
+		global $submenu;
+		foreach($submenu['themes.php'] as $menu_index => $theme_menu){
+			if ( $theme_menu[1] == 'switch_themes' && $theme_menu[4] == 'hide-if-no-customize' ) {
+				unset($submenu['themes.php'][$menu_index]);
+			}
+		}
+	}
+}
+add_action( 'admin_menu', 'bootheme_menu_page_removing', 999 );
+
