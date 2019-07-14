@@ -1,8 +1,8 @@
 {
   "name": "bootheme",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "WordPress theme Bootheme",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

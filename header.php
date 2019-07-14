@@ -18,7 +18,7 @@
 						<div class="site-logo"><?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full', false, null ); ?></div>
 					<?php } ?>
 					<?php $blog_name = get_bloginfo( 'name' );
-					if ( !empty( $blog_name ) && !get_theme_mod( 'custom_logo' )/* || !empty( $blog_name )*/  ) {
+					if ( !empty( $blog_name ) && !get_theme_mod( 'custom_logo' ) || !empty( $blog_name ) && display_header_text() ) {
 						bloginfo( 'name' );
 					} ?>
 					</a>
@@ -38,7 +38,7 @@
 									'walker'            => new wp_bootstrap_navwalker()
 								)
 							);
-							
+
 							bootstrap_search_form();
 						?>
 					</div>

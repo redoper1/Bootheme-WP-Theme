@@ -68,39 +68,12 @@ if ( !function_exists( 'bootheme_setup' ) ) {
         // Add support for full and wide align images.
         add_theme_support( 'align-wide' );
 
-        // Add custom editor font sizes.
-        add_theme_support(
-            'editor-font-sizes',
-            array(
-                array(
-                    'name'      => __( 'Small', 'bootheme' ),
-                    'shortName' => __( 'S', 'bootheme' ),
-                    'size'      => 19.5,
-                    'slug'      => 'small',
-                ),
-                array(
-                    'name'      => __( 'Normal', 'bootheme' ),
-                    'shortName' => __( 'M', 'bootheme' ),
-                    'size'      => 22,
-                    'slug'      => 'normal',
-                ),
-                array(
-                    'name'      => __( 'Large', 'bootheme' ),
-                    'shortName' => __( 'L', 'bootheme' ),
-                    'size'      => 36.5,
-                    'slug'      => 'large',
-                ),
-                array(
-                    'name'      => __( 'Huge', 'bootheme' ),
-                    'shortName' => __( 'XL', 'bootheme' ),
-                    'size'      => 49.5,
-                    'slug'      => 'huge',
-                ),
-            )
-        );
-
         // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
+        
+        add_theme_support( 'header-text' );
+
+        add_theme_support( 'custom-header' );
     }
 }
 add_action( 'after_setup_theme', 'bootheme_setup' );
@@ -110,51 +83,54 @@ add_action( 'after_setup_theme', 'bootheme_setup' );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function bootheme_widgets_init() {
+if ( !function_exists( 'bootheme_widgets_init' ) ) {
+	function bootheme_widgets_init() {
+		register_sidebar(
+			array(
+				'name'          => __( 'Side', 'bootheme' ),
+				'id'            => 'sidebar-1',
+				'description'   => __( 'Add widgets here to appear in your sidebar.', 'bootheme' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
 
-    register_sidebar(
-        array(
-            'name'          => __( 'Side', 'bootheme' ),
-            'id'            => 'sidebar-1',
-            'description'   => __( 'Add widgets here to appear in your sidebar.', 'bootheme' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
-    
-    register_sidebar(
-        array(
-            'name'          => __( 'Footer', 'bootheme' ),
-            'id'            => 'sidebar-footer-1',
-            'description'   => __( 'Add widgets here to appear in your footer.', 'bootheme' ),
-            'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>',
-        )
-    );
+		register_sidebar(
+			array(
+				'name'          => __( 'Footer', 'bootheme' ),
+				'id'            => 'sidebar-footer-1',
+				'description'   => __( 'Add widgets here to appear in your footer.', 'bootheme' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
 
+	}
 }
 add_action( 'widgets_init', 'bootheme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function bootheme_scripts() {
-    $my_theme = wp_get_theme();
-    wp_enqueue_style( 'bootheme-style', get_theme_file_uri( 'style.min.css' ), array(), $my_theme->get( 'Version' ) );
+if ( !function_exists( 'bootheme_scripts' ) ) {
+	function bootheme_scripts() {
+		$my_theme = wp_get_theme();
+		wp_enqueue_style( 'bootheme-style', get_theme_file_uri( 'style.min.css' ), array(), $my_theme->get( 'Version' ) );
 
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 
-    wp_enqueue_script( 'jquery' );
-    wp_register_script( 'boothme-header-scripts', get_theme_file_uri( 'js/scripts-head.min.js' ), array(), $my_theme->get( 'Version' ),false );
-    wp_register_script( 'boothme-footer-scripts', get_theme_file_uri( 'js/scripts.min.js' ), array(), $my_theme->get( 'Version' ),true );
-    wp_enqueue_script( 'boothme-header-scripts' );
-    wp_enqueue_script( 'boothme-footer-scripts' );
+		wp_enqueue_script( 'jquery' );
+		wp_register_script( 'boothme-header-scripts', get_theme_file_uri( 'js/scripts-head.min.js' ), array(), $my_theme->get( 'Version' ), false );
+		wp_register_script( 'boothme-footer-scripts', get_theme_file_uri( 'js/scripts.min.js' ), array(), $my_theme->get( 'Version' ), true );
+		wp_enqueue_script( 'boothme-header-scripts' );
+		wp_enqueue_script( 'boothme-footer-scripts' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bootheme_scripts' );
 
@@ -165,7 +141,8 @@ if ( !file_exists( get_template_directory() . '/vendor/class-wp-bootstrap-navwal
 	require_once get_template_directory() . '/vendor/class-wp-bootstrap-navwalker.php';
 }
 
-if ( !function_exists( 'bootsrap_search_form' ) ) {
+
+if ( !function_exists( 'bootstrap_search_form' ) ) {
     function bootstrap_search_form() {
         echo '
             <form role="search" method="get" class="form-inline my-2 my-lg-0" action="' . esc_url( home_url( '/' ) ) . '">
@@ -176,3 +153,9 @@ if ( !function_exists( 'bootsrap_search_form' ) ) {
         ';
     }
 }
+
+if ( !function_exists( 'bootheme_customize_register' ) ) {
+	function bootheme_customize_register( $wp_customize ) {
+	}
+}
+add_action( 'customize_register', 'bootheme_customize_register' );

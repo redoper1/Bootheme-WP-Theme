@@ -15,9 +15,13 @@
 #master-header {
     transition: margin-top .1s ease 0s;
 
-    .navbar .site-logo img {
-        max-height: 2em;
-        width: auto;
+    .navbar .site-logo {
+        display: inline-block;
+
+        img {
+            max-height: 2em;
+            width: auto;
+        }
     }
 }
 
