@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootheme\n"
-"POT-Creation-Date: 2019-07-14 20:41+0200\n"
-"PO-Revision-Date: 2019-07-14 20:41+0200\n"
+"POT-Creation-Date: 2019-07-15 18:47+0200\n"
+"PO-Revision-Date: 2019-07-15 18:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: David Rychlý <david@davidrychly.cz>\n"
 "Language: cs_CZ\n"
@@ -76,6 +76,26 @@ msgstr "Hledat"
 msgid "Display Site Title"
 msgstr "Zobrazit název stránky"
 
+#: functions.php:199
+msgid "Header background preset"
+msgstr "Přednastavení pozadí záhlaví"
+
+#: functions.php:204 functions.php:219
+msgid "Light"
+msgstr "Světlé"
+
+#: functions.php:205 functions.php:220
+msgid "Dark"
+msgstr "Tmavé"
+
+#: functions.php:214
+msgid "Footer background preset"
+msgstr "Přednastavení pozadí zápatí"
+
+#: functions.php:221
+msgid "Transparent"
+msgstr "Průhledné"
+
 #: header.php:13
 msgid "Skip to content"
 msgstr "Přejít k obsahu"
@@ -115,8 +135,8 @@ msgid "https://github.com/redoper1/Bootheme-WP-Theme"
 msgstr "https://github.com/redoper1/Bootheme-WP-Theme"
 
 #. Description of the plugin/theme
-msgid "Simple theme based on Bootstrap."
-msgstr "Jednoduchá šablona založená na Bootstrapu."
+msgid "Simple WordPress theme based on Bootstrap 4."
+msgstr "Jednoduchá šablona založená na Bootstrapu 4."
 
 #. Author of the plugin/theme
 msgid "David Rychlý"

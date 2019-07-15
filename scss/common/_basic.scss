@@ -31,3 +31,19 @@
     min-height: 100vh;
     transition: margin-top, min-height .1s ease 0s;
 }
+
+.footer-dark {
+    color: $navbar-dark-color;
+
+    a{
+        color: $navbar-dark-active-color;
+
+        @include hover-focus {
+            color: $navbar-dark-hover-color;
+        }
+
+        &.disabled {
+            color: $navbar-dark-disabled-color;
+        }
+    }
+}

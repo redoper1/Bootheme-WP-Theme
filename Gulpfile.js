@@ -59,6 +59,6 @@ gulp.task('build', gulp.series(
 );
 
 gulp.task('watch-build', function () {
-    gulp.watch(['./scss/**/*.scss', './scss/*.scss'], gulp.parallel('styles', 'minifycss'));
-    gulp.watch('./js/**/*.js', gulp.parallel('scripts', 'minifyjs'));
+    gulp.watch(['./scss/**/*.scss', './scss/*.scss'], gulp.series('styles', 'minifycss'));
+    gulp.watch('./js/**/*.js', gulp.series('scripts', 'minifyjs'));
 });

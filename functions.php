@@ -168,6 +168,58 @@ if ( !function_exists( 'bootheme_customize_register' ) ) {
 				'type'     => 'checkbox',
 				'priority' => 40,
 			)
+        );
+
+        $wp_customize->add_setting(
+            'bootheme_header_background',
+            array(
+                'default' => 'light',
+            )
+        );
+
+		$wp_customize->add_setting(
+			'bootheme_footer_background',
+			array(
+				'default' => 'transparent',
+			)
+		);
+
+        $wp_customize->add_section(
+            'bootheme',
+            array(
+                'title'      => 'Bootheme',
+                'priority'   => 999,
+            )
+        );
+
+        $wp_customize->add_control(
+            'bootheme_header_background',
+	        array(
+		        'label'    => __( 'Header background preset', 'bootheme' ),
+		        'section'  => 'bootheme',
+		        'settings' => 'bootheme_header_background',
+		        'type'     => 'select',
+		        'choices'  => array(
+			        'light'         => __( 'Light', 'bootheme' ),
+			        'dark'          => __( 'Dark', 'bootheme' ),
+			        //'transparent'   => __( 'Transparent', 'bootheme' ),
+		        ),
+	        )
+        );
+
+		$wp_customize->add_control(
+			'bootheme_footer_background',
+			array(
+				'label'    => __( 'Footer background preset', 'bootheme' ),
+				'section'  => 'bootheme',
+				'settings' => 'bootheme_footer_background',
+				'type'     => 'select',
+				'choices'  => array(
+					'light'         => __( 'Light', 'bootheme' ),
+					'dark'          => __( 'Dark', 'bootheme' ),
+					'transparent'   => __( 'Transparent', 'bootheme' ),
+				),
+			)
 		);
 	}
 }

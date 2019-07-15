@@ -1,6 +1,6 @@
 			</div>
 
-			<footer class="site-footer bg-light">
+			<footer class="site-footer bg-<?php if ( get_theme_mod ('bootheme_footer_background' ) ) { echo get_theme_mod ('bootheme_footer_background' ); } else { echo 'transparent'; } ?> footer-<?php if ( get_theme_mod ('bootheme_footer_background' ) ) { if ( get_theme_mod ('bootheme_footer_background' ) == 'transparent' ) { echo 'light'; } else { echo get_theme_mod ('bootheme_footer_background' ); } } else { echo 'light'; } ?>">
 				<div class="container">
 					<?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
 					<div class="row">
