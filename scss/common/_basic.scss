@@ -24,10 +24,15 @@
             width: auto;
         }
     }
+
+    &.fixed-top {
+        & + #content {
+            margin-top: 4.125em;
+        }
+    }
 }
 
 #content {
-    margin-top: 4.125em;
     min-height: 100vh;
     transition: margin-top, min-height .1s ease 0s;
 }
@@ -46,4 +51,8 @@
             color: $navbar-dark-disabled-color;
         }
     }
+}
+
+body.admin-bar #master-header.fixed-top {
+    margin-top: 32px;
 }

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Bootheme\n"
-"POT-Creation-Date: 2019-07-15 18:47+0200\n"
+"POT-Creation-Date: 2019-07-16 21:19+0200\n"
 "PO-Revision-Date: 2019-07-14 19:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: David Rychlý <david@davidrychly.cz>\n"
@@ -76,23 +76,35 @@ msgstr ""
 msgid "Display Site Title"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:205
+msgid "Header position preset"
+msgstr ""
+
+#: functions.php:210
+msgid "Static"
+msgstr ""
+
+#: functions.php:211
+msgid "Fixed"
+msgstr ""
+
+#: functions.php:219
 msgid "Header background preset"
 msgstr ""
 
-#: functions.php:204 functions.php:219
+#: functions.php:224 functions.php:239
 msgid "Light"
 msgstr ""
 
-#: functions.php:205 functions.php:220
+#: functions.php:225 functions.php:240
 msgid "Dark"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:234
 msgid "Footer background preset"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:241
 msgid "Transparent"
 msgstr ""
 

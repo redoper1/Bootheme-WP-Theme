@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Bootheme\n"
-"POT-Creation-Date: 2019-07-15 18:47+0200\n"
-"PO-Revision-Date: 2019-07-15 18:48+0200\n"
+"POT-Creation-Date: 2019-07-16 21:19+0200\n"
+"PO-Revision-Date: 2019-07-16 21:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: David Rychlý <david@davidrychly.cz>\n"
 "Language: cs_CZ\n"
@@ -76,23 +76,35 @@ msgstr "Hledat"
 msgid "Display Site Title"
 msgstr "Zobrazit název stránky"
 
-#: functions.php:199
-msgid "Header background preset"
-msgstr "Přednastavení pozadí záhlaví"
+#: functions.php:205
+msgid "Header position preset"
+msgstr "Předvolba umístění záhlaví"
 
-#: functions.php:204 functions.php:219
+#: functions.php:210
+msgid "Static"
+msgstr "Statická"
+
+#: functions.php:211
+msgid "Fixed"
+msgstr "Fixní"
+
+#: functions.php:219
+msgid "Header background preset"
+msgstr "Předvolba pozadí záhlaví"
+
+#: functions.php:224 functions.php:239
 msgid "Light"
 msgstr "Světlé"
 
-#: functions.php:205 functions.php:220
+#: functions.php:225 functions.php:240
 msgid "Dark"
 msgstr "Tmavé"
 
-#: functions.php:214
+#: functions.php:234
 msgid "Footer background preset"
-msgstr "Přednastavení pozadí zápatí"
+msgstr "Předvolba pozadí zápatí"
 
-#: functions.php:221
+#: functions.php:241
 msgid "Transparent"
 msgstr "Průhledné"
 

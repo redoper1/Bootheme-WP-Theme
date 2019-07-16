@@ -11,7 +11,7 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site" data-spy="scroll" data-target="#main-nav" data-offset="0">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bootheme' ); ?></a>
-			<header id="master-header" class="site-header bg-<?php if ( get_theme_mod ('bootheme_header_background' ) ) { echo get_theme_mod ('bootheme_header_background' ); } else { echo 'light'; } ?> fixed-top">
+			<header id="master-header" class="site-header bg-<?php if ( get_theme_mod ('bootheme_header_background' ) ) { echo get_theme_mod ('bootheme_header_background' ); } else { echo 'light'; } ?> <?php if ( get_theme_mod ('bootheme_header_position' ) ) { echo get_theme_mod ('bootheme_header_position' ); } else { echo 'fixed-top'; } ?>">
 				<nav id="main-nav" class="navbar navbar-expand-lg navbar-<?php if ( get_theme_mod ('bootheme_header_background' ) ) { if ( get_theme_mod ('bootheme_header_background' ) == 'transparent' ) { echo 'light'; } else { echo get_theme_mod ('bootheme_header_background' ); } } else { echo 'light'; } ?> container">
 					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php if ( get_theme_mod( 'custom_logo' ) ) { ?>

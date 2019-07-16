@@ -184,13 +184,34 @@ if ( !function_exists( 'bootheme_customize_register' ) ) {
 			)
 		);
 
+		$wp_customize->add_setting(
+			'bootheme_header_position',
+			array(
+				'default' => 'fixed-top',
+			)
+		);
+
         $wp_customize->add_section(
             'bootheme',
             array(
                 'title'      => 'Bootheme',
                 'priority'   => 999,
             )
-        );
+		);
+		
+		$wp_customize->add_control(
+			'bootheme_header_position',
+			array(
+				'label'    => __( 'Header position preset', 'bootheme' ),
+				'section'  => 'bootheme',
+				'settings' => 'bootheme_header_position',
+				'type'     => 'select',
+				'choices'  => array(
+					'static'         => __( 'Static', 'bootheme' ),
+					'fixed-top'          => __( 'Fixed', 'bootheme' ),
+				),
+			)
+		);
 
         $wp_customize->add_control(
             'bootheme_header_background',
