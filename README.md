@@ -1,2 +1,2 @@
 # Bootheme-WP-Theme
-WordPress theme Bootheme
+Simple WordPress theme based on Bootstrap 4.
