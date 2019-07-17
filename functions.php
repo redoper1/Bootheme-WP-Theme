@@ -136,7 +136,7 @@ add_action( 'wp_enqueue_scripts', 'bootheme_scripts' );
 
 // Register Custom Navigation Walker for Bootstrap 4
 if ( !file_exists( get_template_directory() . '/vendor/class-wp-bootstrap-navwalker.php' ) ) {
-	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'bootheme' ) );
 } else {
 	require_once get_template_directory() . '/vendor/class-wp-bootstrap-navwalker.php';
 }
@@ -145,9 +145,9 @@ if ( !file_exists( get_template_directory() . '/vendor/class-wp-bootstrap-navwal
 if ( !function_exists( 'bootstrap_search_form' ) ) {
     function bootstrap_search_form() {
         echo '
-            <form role="search" method="get" class="form-inline my-2 my-lg-0" action="' . esc_url( home_url( '/' ) ) . '">
+            <form role="search" method="get" class="form-inline my-2 my-lg-0 col-auto p-0" action="' . esc_url( home_url( '/' ) ) . '">
                 <label class="screen-reader-text" for="s">' . __( 'Search for:', 'bootheme' ) . '</label>
-                <input class="form-control mr-sm-2" type="search" placeholder="' . __( 'Search', 'bootheme' ) . '" aria-label="' . __( 'Search', 'bootheme' ) . '" name="s" value="' . get_search_query() . '">
+                <input class="form-control col col-md-4 mr-2 ml-auto" type="search" placeholder="' . __( 'Search', 'bootheme' ) . '" aria-label="' . __( 'Search', 'bootheme' ) . '" name="s" value="' . get_search_query() . '">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i> ' . __( 'Search', 'bootheme' ) . '</button>
             </form>
         ';

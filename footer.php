@@ -1,10 +1,10 @@
 			</div>
 
-			<footer class="site-footer bg-<?php if ( get_theme_mod ('bootheme_footer_background' ) ) { echo get_theme_mod ('bootheme_footer_background' ); } else { echo 'transparent'; } ?> footer-<?php if ( get_theme_mod ('bootheme_footer_background' ) ) { if ( get_theme_mod ('bootheme_footer_background' ) == 'transparent' ) { echo 'light'; } else { echo get_theme_mod ('bootheme_footer_background' ); } } else { echo 'light'; } ?>">
+			<footer class="site-footer bg-<?php if ( esc_attr( get_theme_mod ('bootheme_footer_background' ) ) ) { echo esc_attr( get_theme_mod ('bootheme_footer_background' ) ); } else { echo 'transparent'; } ?> footer-<?php if ( esc_attr( get_theme_mod ( 'bootheme_footer_background' ) ) ) { if ( esc_attr( get_theme_mod ( 'bootheme_footer_background' ) ) === 'transparent' ) { echo 'light'; } else { echo esc_attr( get_theme_mod ('bootheme_footer_background' ) ); } } else { echo 'light'; } ?>">
 				<div class="container">
 					<?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
 					<div class="row">
-						<div class="site-info col-12 col-md my-auto">
+						<div class="site-info col-12 col-md-auto my-auto">
 							<?php $blog_info = get_bloginfo( 'name' ); ?>
 							<?php if ( ! empty( $blog_info ) ) { ?>
 								<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
@@ -19,7 +19,7 @@
 							?>
 						</div>
 						<?php if ( has_nav_menu( 'footer' ) ) { ?>
-							<nav class="footer-navigation d-inline-block col-12 col-md-auto" aria-label="<?php esc_attr_e( 'Footer Menu', 'bootheme' ); ?>">
+							<nav class="footer-navigation d-inline-block col-12 col-md" aria-label="<?php esc_attr_e( 'Footer Menu', 'bootheme' ); ?>">
 								<?php
 								wp_nav_menu(
 									array(

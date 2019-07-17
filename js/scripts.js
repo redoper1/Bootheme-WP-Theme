@@ -7029,8 +7029,14 @@ jQuery(function($){
         updateDimensionsOfElements();
     });
 
+    $(document).change(function () {
+        updateDimensionsOfElements();
+    });
+
     function updateDimensionsOfElements() {
-        // Set the page content minimal height
+        // Set the page content top margin and minimal height
+        $('#content').css('margin-top', $('#master-header').outerHeight());
+        console.log($('#master-header').outerHeight());
         $('#content').css('min-height', 'calc(100vh' + ' - ' + $('#master-header').outerHeight() + 'px' + ' - ' + $('footer').outerHeight() + 'px' + ')');
 
         // Set the minimal height of page content if WP admin bar is present

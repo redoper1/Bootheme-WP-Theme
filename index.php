@@ -26,6 +26,7 @@ get_header();
                         } else {
                             the_content();
                         }
+                        comments_template();
                     }
 
                     // Previous/next page navigation.
