@@ -32,7 +32,8 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'    => 'ol',
+					'style'     => 'ul',
+                    'walker'    => new WP_Bootstrap_Navwalker,
 				)
 			);
 			?>

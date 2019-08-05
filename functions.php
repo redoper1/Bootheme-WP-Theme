@@ -3,24 +3,9 @@ if ( !function_exists( 'bootheme_setup' ) ) {
     function bootheme_setup() {
         load_theme_textdomain( 'bootheme', get_template_directory() . '/languages' );
 
-        // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
-
-        /*
-         * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
-         */
         add_theme_support( 'title-tag' );
-
-        /*
-         * Enable support for Post Thumbnails on posts and pages.
-         *
-         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-         */
         add_theme_support( 'post-thumbnails' );
-        //set_post_thumbnail_size( 1568, 9999 );
 
         register_nav_menus(
             array(
@@ -29,10 +14,6 @@ if ( !function_exists( 'bootheme_setup' ) ) {
             )
         );
 
-        /*
-         * Switch default core markup for search form, comment form, and comments
-         * to output valid HTML5.
-         */
         add_theme_support(
             'html5',
             array(
@@ -44,11 +25,6 @@ if ( !function_exists( 'bootheme_setup' ) ) {
             )
         );
 
-        /**
-         * Add support for core custom logo.
-         *
-         * @link https://codex.wordpress.org/Theme_Logo
-         */
         add_theme_support(
             'custom-logo',
             array(
@@ -59,20 +35,11 @@ if ( !function_exists( 'bootheme_setup' ) ) {
             )
         );
 
-        // Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );
-
-        // Add support for Block Styles.
         add_theme_support( 'wp-block-styles' );
-
-        // Add support for full and wide align images.
         add_theme_support( 'align-wide' );
-
-        // Add support for responsive embedded content.
         add_theme_support( 'responsive-embeds' );
-
         add_theme_support( 'header-text' );
-
         add_theme_support( 'custom-header' );
     }
 }
@@ -80,8 +47,6 @@ add_action( 'after_setup_theme', 'bootheme_setup' );
 
 /**
  * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 if ( !function_exists( 'bootheme_widgets_init' ) ) {
 	function bootheme_widgets_init() {
@@ -135,12 +100,11 @@ if ( !function_exists( 'bootheme_scripts' ) ) {
 add_action( 'wp_enqueue_scripts', 'bootheme_scripts' );
 
 // Register Custom Navigation Walker for Bootstrap 4
-if ( !file_exists( get_template_directory() . '/vendor/class-wp-bootstrap-navwalker.php' ) ) {
+if ( !file_exists( get_template_directory() . '/inc/walker/class-wp-bootstrap-navwalker.php' ) ) {
 	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'bootheme' ) );
 } else {
-	require_once get_template_directory() . '/vendor/class-wp-bootstrap-navwalker.php';
+	require_once get_template_directory() . '/inc/walker/class-wp-bootstrap-navwalker.php';
 }
-
 
 if ( !function_exists( 'bootstrap_search_form' ) ) {
     function bootstrap_search_form() {
@@ -198,7 +162,7 @@ if ( !function_exists( 'bootheme_customize_register' ) ) {
                 'priority'   => 999,
             )
 		);
-		
+
 		$wp_customize->add_control(
 			'bootheme_header_position',
 			array(
@@ -250,11 +214,18 @@ if ( !function_exists( 'bootheme_menu_page_removing' ) ) {
 	function bootheme_menu_page_removing() {
 		global $submenu;
 		foreach($submenu['themes.php'] as $menu_index => $theme_menu){
-			if ( $theme_menu[1] == 'switch_themes' && $theme_menu[4] == 'hide-if-no-customize' ) {
+			if ( isset($theme_menu) && isset($theme_menu[4]) && ($theme_menu[1] == 'switch_themes' && $theme_menu[4] == 'hide-if-no-customize') ) {
 				unset($submenu['themes.php'][$menu_index]);
 			}
 		}
 	}
 }
 add_action( 'admin_menu', 'bootheme_menu_page_removing', 999 );
+
+// Register Custom Comments Walker for Bootstrap 4
+if ( !file_exists( get_template_directory() . '/inc/walker/class-wp-bootstrap-walker-comment.php' ) ) {
+	return new WP_Error( 'class-wp-bootstrap-walker-comment-missing', __( 'It appears the class-wp-bootstrap-walker-comment.php file may be missing.', 'bootheme' ) );
+} else {
+	require_once get_template_directory() . '/inc/walker/class-wp-bootstrap-walker-comment.php';
+}
 
